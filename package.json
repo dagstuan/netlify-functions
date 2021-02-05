@@ -1,0 +1,22 @@
+{
+  "name": "netlify-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dagstuan/netlify-functions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dagstuan/netlify-functions/issues"
+  },
+  "homepage": "https://github.com/dagstuan/netlify-functions#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
