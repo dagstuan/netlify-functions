@@ -5,12 +5,12 @@ exports.handler = async () => {
 
   const ret = await axios.get(endpoint)
 
-  console.log(ret.data);
+  console.log(ret.data.rows);
 
   // const ret = await fetch(endpoint);
 
   return {
     statusCode: 200,
-    body: JSON.stringify(ret.data)
+    body: JSON.stringify(ret.data.rows)
   };
 }
