@@ -5,7 +5,7 @@ exports.handler = async () => {
 
   const ret = await axios.get(endpoint)
 
-  const mapped = ret.data.rows.map(r => ({
+  const mapped = ret.data.rows.map(row => ({
     key: row['key'],
     name: row['SECURITYNAME'],
     price: row['PRICE']
