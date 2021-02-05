@@ -5,12 +5,16 @@ exports.handler = async () => {
 
   const ret = await axios.get(endpoint)
 
-  console.log(ret.data.rows);
+  const mapped = ret.data.rows.map(r => ({
+    key: row['key'],
+    name: row['SECURITYNAME'],
+    price: row['PRICE']
+  }))
 
   // const ret = await fetch(endpoint);
 
   return {
     statusCode: 200,
-    body: JSON.stringify(ret.data.rows)
+    body: JSON.stringify(mapped)
   };
 }
