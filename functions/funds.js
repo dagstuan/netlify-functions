@@ -7,8 +7,8 @@ exports.handler = async () => {
 
   const mapped = ret.data.rows.map(row => ({
     key: row['key'],
-    name: row['SECURITYNAME'],
-    price: row['PRICE']
+    name: row.values.SECURITYNAME,
+    price: row.values.PRICE
   }))
 
   // const ret = await fetch(endpoint);
