@@ -20,7 +20,7 @@ exports.handler = async (event) => {
         key: row["key"],
         name: SECURITYNAME,
         price: PRICE,
-        time,
+        time: time.toLocaleDateString("no-NB"),
       };
     })
     .filter((row) =>
