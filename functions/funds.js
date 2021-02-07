@@ -11,11 +11,18 @@ exports.handler = async (event) => {
   const keysToFilterOn = key ? key.split(",").map((k) => k.trim()) : [];
 
   const mapped = ret.data.rows
-    .map((row) => ({
-      key: row["key"],
-      name: row.values.SECURITYNAME,
-      price: row.values.PRICE,
-    }))
+    .map((row) => {
+      const { SECURITYNAME, PRICE, TIME } = row.values;
+
+      const time = new Date(TIME);
+
+      return {
+        key: row["key"],
+        name: SECURITYNAME,
+        price: PRICE,
+        time,
+      };
+    })
     .filter((row) =>
       keysToFilterOn.length > 0 ? keysToFilterOn.includes(row.key) : true
     );
