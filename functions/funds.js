@@ -1,6 +1,4 @@
 const axios = require("axios");
-const format = require("date-fns/format");
-const nb = require("date-fns/locale/nb");
 
 exports.handler = async (event) => {
   const key = event.queryStringParameters.key;
@@ -16,13 +14,11 @@ exports.handler = async (event) => {
     .map((row) => {
       const { SECURITYNAME, PRICE, TIME } = row.values;
 
-      const time = new Date(TIME);
-
       return {
         key: row["key"],
         name: SECURITYNAME,
         price: PRICE,
-        time: format(time, "P", { locale: nb }),
+        time: TIME,
       };
     })
     .filter((row) =>
