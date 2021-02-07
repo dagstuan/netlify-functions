@@ -20,7 +20,7 @@ exports.handler = async (event) => {
         key: row["key"],
         name: SECURITYNAME,
         price: PRICE,
-        time: `${time.getDate()}.${time.getMonth() + 1}.${time.getFullYear()}`,
+        time: new Intl.DateTimeFormat("no-NB").format(time),
       };
     })
     .filter((row) =>
