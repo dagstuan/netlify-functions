@@ -20,7 +20,7 @@ exports.handler = async (event) => {
         key: row["key"],
         name: SECURITYNAME,
         price: PRICE,
-        time: time.toLocaleDateString("no-NB"),
+        time: `${time.getDate()}.${time.getMonth() + 1}.${time.getFullYear()}`,
       };
     })
     .filter((row) =>
